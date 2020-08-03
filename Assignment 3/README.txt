@@ -1,0 +1,1 @@
+Two different versions for two different MVVM designs. I couldn't decide which one was better. View part is exactly the same for both of them, but their Model and ViewModel are different.
