@@ -18,10 +18,11 @@ struct SetCardView: View {
                 .aspectRatio(3/2, contentMode: .fit)
                 .background(Color.white)
                 .padding(3.0)
-                .border(self.strokeColor, width: 3.0)
-                .animation(.easeInOut(duration: 0.2)) // MARK: - Wow! Prevent animation.
+                .overlay(RoundedRectangle(cornerRadius: 8.0)
+                    .stroke(self.strokeColor, lineWidth: 4.0)
+                )
                 .cornerRadius(8.0)
-                .padding(2.5)
+                .padding(5.0)
         }
     }
     
