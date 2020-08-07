@@ -18,7 +18,8 @@ struct GameOfSetMainView: View {
             
             Grid(isInitial ? [SetCard]() : viewModel.cardsOnTheTable) { card in
                 SetCardView(card: card).onTapGesture {
-                    withAnimation(.easeInOut(duration: 1.5)) {
+                    let thereIsMatch = self.viewModel.cardsOnTheTable.contains { $0.isMatch == .match }
+                    withAnimation(thereIsMatch ? .easeInOut(duration: 1.5) : nil) {
                         self.viewModel.select(card: card)
                     }
                 }.transition(AnyTransition.offset(self.randomSize))
